@@ -8,10 +8,7 @@
 
 /* Mapnik does not yet support character-spacing adjustments for 
    labels placed along a line. We can fake this using the replace()
-   function in the text-clip:false;
-text-allow-overlap:false;
-text-avoid-edges: true;
-text-name parameter by replacing each character
+   function in the text-name parameter by replacing each character
    with itself followed by one or more spaces. */
 
 /* ================================================================== */
