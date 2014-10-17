@@ -20,7 +20,7 @@
 /* ================================================================== */
 
 /* directory to load fonts from in addition to the system directories */
-Map { font-directory: url(./fonts); }
+Map { font-directory: url(./fonts); buffer-size:256; }
 
 /* set up font sets for various weights and styles */
 @sans_lt:           "Open Sans Regular","DejaVu Sans Book","unifont Medium";
@@ -34,25 +34,30 @@ Map { font-directory: url(./fonts); }
 /* Note this is only implemented for certain things so far */
 @text_adjust: 0;
 
+@darkerby: 25%;
+@desaturateby: 20%;
+@text_multiplier: 1.35;
+
 /* ================================================================== */
 /* COLORS
 /* ================================================================== */
 
-@bluish_white:      #fbfdfe;
+//@bluish_white:     desaturate(darken(#fbfdfe, @darkerby), @desaturateby);
+@bluish_white:      #ffffff;
 
 /* ================================================================== */
 /* LANDUSE & LANDCOVER COLORS
 /* ================================================================== */
 
-@land:              #faf8f4; // #f9f6f1;
-@water:             #bcdbf7;
+@land:              desaturate(darken(#faf8f4, @darkerby), @desaturateby); // #f9f6f1;
+@water:             desaturate(darken(#bcdbf7, @darkerby), @desaturateby);
 @beach:             @land;
 
-@park:              #f1f7e7;
+@park:              desaturate(darken(#f1f7e7, @darkerby), @desaturateby);
 @wooded:            darken(@park, 4%);
 @grass:             @park;
 @sports:            @park;
-@agriculture:       #d6edc5;
+@agriculture:       desaturate(darken(#d6edc5, @darkerby), @desaturateby);
 @cemetery:          @park * .97;
 
 @building:          @land * 0.92;
@@ -64,7 +69,7 @@ Map { font-directory: url(./fonts); }
 @industrial:        @land;
 @parking:           @land;
 
-@stream:            #dcecfb;
+@stream:            desaturate(darken(#dcecfb, @darkerby), @desaturateby);
 @canal:             @stream;
 
 /* ================================================================== */
@@ -83,12 +88,12 @@ Map { font-directory: url(./fonts); }
 @standard_line:     @land * 0.92;
 @standard_fill:     @bluish_white;
 @standard_case:     @land * 0.88;
-@standard_tunnel_fill: #fcfcfb;
+@standard_tunnel_fill: desaturate(darken(#fcfcfb, @darkerby), @desaturateby);
 
 @motorway_line:     @land * 0.85;
-@motorway_fill:     #fdf7d2;
+@motorway_fill:     desaturate(darken(#fdf7d2, @darkerby), @desaturateby);
 @motorway_case:     @land * 0.85;
-@motorway_tunnel_fill: #fcf8e9;
+@motorway_tunnel_fill: desaturate(darken(#fcf8e9, @darkerby), @desaturateby);
 
 @trunk_line:        @motorway_line;
 @trunk_fill:        @motorway_fill;
@@ -114,20 +119,20 @@ Map { font-directory: url(./fonts); }
 @pedestrian_bridge_case: @land;
 
 @cycle_line:        @standard_line;
-@cycle_fill:        #FAFAF5;
+@cycle_fill:        desaturate(darken(#FAFAF5, @darkerby), @desaturateby);
 @cycle_case:        @land;
 
 @rail_fill:         @land * 0.88;
 @rail_bridge_fill:  @land * 0.78;
 @rail_case:         @land; // Used only on rail bridges.
 
-@aeroway:           #ddd;
+@aeroway:           desaturate(darken(#ddd, @darkerby), @desaturateby);
 
 /* ================================================================== */
 /* BOUNDARY COLORS
 /* ================================================================== */
 
-@admin_2:           #8fa7bc;
+@admin_2:           desaturate(darken(#8fa7bc, @darkerby), @desaturateby);
 
 /* ================================================================== */
 /* LABEL COLORS
@@ -137,31 +142,31 @@ Map { font-directory: url(./fonts); }
    at once or override each individually. */
 @place_halo:        fadeout(@bluish_white,5%);
 
-@country_text:      #222;
+@country_text:      desaturate(darken(#222, @darkerby), @desaturateby);
 @country_halo:      @place_halo;
 
-@state_text:        #5e5666;
+@state_text:        desaturate(darken(#5e5666, @darkerby), @desaturateby);
 @state_halo:        @place_halo;
 
-@city_text:         #333;
+@city_text:         desaturate(darken(#333, @darkerby), @desaturateby);
 @city_halo:         @place_halo;
 
-@town_text:         #444;
+@town_text:         desaturate(darken(#444, @darkerby), @desaturateby);
 @town_halo:         @place_halo;
 
-@poi_text:          #888;  
+@poi_text:          desaturate(darken(#888, @darkerby), @desaturateby);  
 
-@road_text:         #999;
+@road_text:         desaturate(darken(#999, @darkerby), @desaturateby);
 @road_halo:         @bluish_white;
 
-@other_text:        #87756d;
+@other_text:        desaturate(darken(#87756d, @darkerby), @desaturateby);
 @other_halo:        @place_halo;
 
-@locality_text:     #aaa;
+@locality_text:     desaturate(darken(#aaa, @darkerby), @desaturateby);
 @locality_halo:     @land;
 
 /* Also used for other small places: hamlets, suburbs, localities */
-@village_text:      #777;
+@village_text:      desaturate(darken(#777, @darkerby), @desaturateby);
 @village_halo:      @place_halo;
 
 /* ****************************************************************** */
